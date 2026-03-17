@@ -1,0 +1,29 @@
+body{
+    display: flex;
+    flex-direction: column;
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.navbar{
+    height: 10vh;
+    background-color: rgb(130, 215, 241);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn{
+    margin: 0 5rem 0 0;
+    padding: 0.5rem 3rem;
+    border: 1px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 1rem;
+}
+
+#quizBody{
+    margin: 2rem;
+}
+.hidden{
+    display:none;
+}

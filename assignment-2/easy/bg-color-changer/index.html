@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 2 - Assignment 1</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class = inputContainer>
+        <div class="colorContainer">
+            <button class="btn" data-color="red">
+                Red
+            </button>
+            <button class="btn" data-color="yellow">
+                Yellow
+            </button>
+            <button class="btn" data-color="purple">
+                Purple
+            </button>
+            <button class="btn" data-color="black">
+                Black
+            </button>
+            <button class="btn" data-color="green">
+                Green
+            </button>
+            <button class="btn" data-color="blue">
+                Blue
+            </button>
+        </div>
+        <div class="customContainer">
+            <div>
+                <button id="addCustomBtn" class = "btn">Add a custom color</button>
+            </div>
+            <div id="inputFieldArea" class = "hidden">
+                <!-- take an inmput from the user here for the hex code and then change the backgrouund color according to the hex code -->
+                 <input type="color" id="hexInput" placeholder="#FFFFFF">
+                 <button id = "submitColor" class="btn">Submit</button>
+                 <button id="cancelBtn" class="btn">back</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="scripts.js"></script>
+</html>

@@ -1,5 +1,6 @@
 //  use this quizData in your app.
 export const quizData = [{
+    "id": "qwerty",
     "question": "Which language runs in a web browser?",
     "a": "Java",
     "b": "C",
@@ -8,6 +9,7 @@ export const quizData = [{
     "correct": "d",
 },
 {
+    "id":"asdfgh",
     "question": "What does CSS stand for?",
     "a": "Central Style Sheets",
     "b": "Cascading Style Sheets",
@@ -16,6 +18,7 @@ export const quizData = [{
     "correct": "b",
 },
 {
+    "id":"zxcvbn",
     "question": "What does HTML stand for?",
     "a": "Hypertext Markup Language",
     "b": "Hypertext Markdown Language",
@@ -24,6 +27,7 @@ export const quizData = [{
     "correct": "a",
 },
 {
+    "id":"mnbvcx",
     "question": "What year was JavaScript launched?",
     "a": "1996",
     "b": "1995",
