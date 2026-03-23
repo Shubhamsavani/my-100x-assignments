@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="formBody">
+            <h2>Form Builder</h2>
+            <hr>
+            
+            <div class="input-group">
+                <label for="fieldLabel">Field Label</label>
+                <input type="text" id="fieldLabel" placeholder="e.g., Enter your name">
+            </div>
+
+            <div class="input-group">
+                <label for="fieldType">Input Type</label>
+                <select id="fieldType">
+                    <option value="text">Text Input</option>
+                    <option value="checkbox">Checkbox</option>
+                    <option value="radio">Radio Button</option>
+                </select>
+            </div>
+
+            <button id="addFieldBtn">Add Field</button>
+        </div>
+
+        <div class="formBody" id="previewArea">
+            <h2>Preview</h2>
+            <hr>
+            <form id="dynamicForm">
+                <p class="placeholder-text">No fields added yet.</p>
+            </form>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+<script src="scripts.js"></script>
+</html>

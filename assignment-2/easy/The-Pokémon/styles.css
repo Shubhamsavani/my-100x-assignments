@@ -1,0 +1,181 @@
+/* --- Global Reset & Foundation --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2d3436;
+    color: white;
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.navbar h1 {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    color: #ffffff; /* Pokemon-style accent color */
+}
+
+/* --- Input Area & Buttons --- */
+#addCard {
+    background-color: #0984e3;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+#addCard:hover {
+    background-color: #74b9ff;
+}
+
+#addNewCardInput {
+    display: flex;
+    gap: 10px;
+}
+
+#addNewCardInput input {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+}
+
+#pokeInput { width: 200px; }
+#pokeQtyInput { width: 60px; }
+
+#pokeInput-submit { background-color: #00b894; color: white; border: none; padding: 5px 15px; border-radius: 4px; cursor: pointer; }
+#pokeInput-cancel { background-color: #d63031; color: white; border: none; padding: 5px 15px; border-radius: 4px; cursor: pointer; }
+
+.hidden { display: none !important; }
+
+/* --- Main Layout --- */
+#container-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.heading {
+    text-align: center;
+    color: #2d3436;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    border-bottom: 2px solid #fab1a0;
+    display: inline-block;
+    width: auto;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+}
+
+/* --- Grid System --- */
+#grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+/* --- The Cards --- */
+.grid-card {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.grid-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.card {
+    margin-bottom: 1rem;
+}
+
+.cardImage {
+    width: 120px;
+    height: 120px;
+    background-color: #f9f9f9;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 3px solid #eee;
+}
+
+.card h3 {
+    text-transform: capitalize;
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+
+.card p {
+    color: #636e72;
+    font-weight: bold;
+}
+
+/* --- Card Actions (Buttons & Qty) --- */
+.grid-card div:last-child {
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+    margin-top: auto;
+}
+
+.grid-card h3 {
+    margin-bottom: 10px;
+    color: #0984e3;
+}
+
+.btn-delete, .btn-edit {
+    padding: 5px 12px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: 0.2s;
+    margin: 0 3px;
+}
+
+.btn-delete { background-color: #fff; color: #d63031; border-color: #d63031; }
+.btn-delete:hover { background-color: #d63031; color: white; }
+
+.btn-edit { background-color: #fff; color: #0984e3; border-color: #0984e3; }
+.btn-edit:hover { background-color: #0984e3; color: white; }
+
+/* Empty state message */
+#grid-container h2 {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #b2bec3;
+    font-style: italic;
+    margin-top: 50px;
+}
+
+/* utils */
+
+.hidden{
+    display: none !important; 
+}
