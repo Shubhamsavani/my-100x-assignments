@@ -11,74 +11,72 @@
         <h1>TO-DO LIST</h1>
         <button id="add-Event">+</button>
     </div>
+    <!-- <div id="task-input-form"class="hidden">
+        
+    </div> -->
     <div class="task-display">
-        <div class="pending task-column">
+        <div class="pending task-column" data-state="pending">
             <h2 class="heading">Pending</h2>
-            <div class="task-container">
-                <div class="task-card" draggable="true">
-                    <h4>Task heading</h4>
-                    <p class="task-desc">To do so and so.... </p>
-                    <p class="task-priority-medium">Medium</p>
-                </div>
-                <div class="task-card" draggable="true">
-                    <h4>Task heading</h4>
-                    <p class="task-desc">To do so and so.... </p>
-                    <p class="task-priority-hard">Hard</p>
-                </div>
+            <div id="task-container-pending" class="task-container">
+                
             </div>
-
-
             <button id="add-to-pending" class="add-new">Add new task</button>
         </div>
 
-        <div class="ongoing task-column">
+        <div class="ongoing task-column" data-state="ongoing">
             <h2 class="heading">In Progress</h2>
-            <div class="task-container">
-                <div class="task-card" draggable="true">
+            <div id="task-container-ongoing" class="task-container">
+                <!-- <div class="task-card" draggable="true" id="162763">
                     <h4>Task heading</h4>
                     <p class="task-desc">To do so and so.... </p>
-                    <p class="task-priority-medium">Medium</p>
-                </div>
-                <div class="task-card" draggable="true">
-                    <h4>Task heading</h4>
-                    <p class="task-desc">To do so and so.... </p>
-                    <p class="task-priority-hard">Hard</p>
-                </div>
+                    <p class="task-priority-Medium">Medium</p>
+                </div> -->
+                
             </div>
             <button id="add-to-inProgress" class="add-new">Add new task</button>
         </div>
         
-        <div class="underReview task-column">
+        <div class="underReview task-column" data-state="underReview">
             <h2 class="heading">Under Review</h2>
-            <div class="task-container">
-                <div class="task-card" draggable="true">
-                    <h4>Task heading</h4>
-                    <p class="task-desc">To do so and so.... </p>
-                    <p class="task-priority-easy">Easy</p>
-                </div>
-                <div class="task-card" draggable="true">
-                    <h4>Task heading</h4>
-                    <p class="task-desc">To do so and so.... </p>
-                    <p class="task-priority-hard">Hard</p>
-                </div>
+            <div id="task-container-underReview" class="task-container">
+                
             </div>
             <button id="add-to-review" class="add-new">Add new task</button>
         </div>
-        <div class="finished task-column">
+        <div class="finished task-column" data-state="finished">
             <h2 class="heading">Finished</h2>
-            <div class="task-container">
-                <div class="task-card" draggable="true">
-                    <h4>Task heading</h4>
-                    <p class="task-desc">To do so and so.... </p>
-                    <p class="task-priority-medium">Medium</p>
-                </div>
-                <div class="task-card" draggable="true">
-                    <h4>Task heading</h4>
-                    <p class="task-desc">To do so and so.... </p>
-                    <p class="task-priority-easy">Easy</p>
-                </div>
+            <div id="task-container-finished" class="task-container">
+                
             </div>
             <button id="add-to-finished" class="add-new">Add new task</button>
+        </div>
+    </div>
+
+    <div id="task-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="input">    
+                <label for="task-heading">Enter the task heading:</label>
+                <input type="text" id="task-heading">
+            </div>
+
+            <div class="input">   
+                <label for="task-subheading">Enter the task description:</label>
+                <input type="text" id="task-subheading">
+            </div>
+
+            <div class="input">
+                <label for="fieldType">Priority:</label>
+                <select id="task-priority">
+                    <option value="Easy">Easy</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Hard">Hard</option>
+                </select>
+            </div>
+
+            <div class="modal-action input">
+                <button id="create-task">Submit</button>
+                <button id="close-modal">Cancel</button>
+            </div>
         </div>
     </div>
 </body>
