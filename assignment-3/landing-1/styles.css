@@ -1,0 +1,665 @@
+:root {
+  /* Define your theme colors here */
+  --primary: oklch(46.07% .1853 4.0994); /* Pink/Red from T3Chat */
+  --secondary-pink: #ec4899;
+  --background: oklch(15.84% .015 346.32);
+  --foreground: oklch(83.98% .0387 309.539);
+  --muted: oklch(26.34% .0219 309.475);
+  --muted-foreground: oklch(79.4% .0372 307.103);
+  --muted-alpha: rgba(100, 116, 139, 0.2);
+  --accent-foreground: oklch(96.47% .0091 341.804);
+
+    --card: oklch(28.03% .0232 307.541);
+    --card-foreground: oklch(84.56% .0302 341.46);
+
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+
+  --background-color: color-mix(in oklab, var(--input) 30%, transparent);
+
+
+  --color-purple-300: oklch(82.7% .119 306.383);
+}
+
+body{
+    margin: 0;
+    height: 2000px;
+    font-family: 'Poppins', sans-serif;
+    background-color:var(--background);
+    color:var(--foreground);
+}
+
+/* For Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* For Firefox */
+body {
+  scrollbar-width: none;
+}
+
+/* For IE/old Edge */
+body {
+  -ms-overflow-style: none;
+}
+
+.navbar{
+    position: fixed;
+    top: 0;
+    width: 75vw;
+    margin-top: 20px;;
+    padding: 20px 40px;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    justify-self: center;
+    align-self: center;
+}
+
+.nav-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.Home{
+    font-size: medium;
+    font-weight: bold;
+    color: var(--foreground);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+/* logo */
+.logo-container {
+  /* 'size-8' in Tailwind is 2rem or 32px */
+  width: 32px;
+  height: 32px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* The Gradient Background */
+  background: linear-gradient(45deg, var(--primary), var(--secondary-pink));
+  border-radius: 10px; /* 'rounded-xl' equivalent */
+  color: white;
+  
+  /* The Shadow (Drop-shadow-md) */
+  box-shadow: 0 4px 10px rgba(176, 0, 93, 0.3);
+  
+  transition: transform 0.2s ease;
+  margin: 0 8px;
+}
+
+.logo-container:hover {
+  transform: scale(1.05);
+}
+
+.logo-container svg {
+  /* 'size-5' equivalent */
+  width: 20px;
+  height: 20px;
+}
+
+.nav-links a {
+  margin: 0 15px;
+  text-decoration: none;
+  font-size: small;
+  font-weight: bold;
+  color: oklch(83.98% .0387 309.539);
+}
+
+.cta-btn {
+    padding: 10px 20px;
+    border-radius: 12px;
+    border: none;
+    background-color: var(--primary);
+    
+    color: var(--foreground);
+}
+
+.navbar.scrolled {
+  padding: 6px 5px;
+  width: 60%;
+  top: 15px;
+  border-radius: 14px;
+
+  /* GLASS EFFECT */
+  background: color-mix(in oklab, var(--muted) 80%, transparent);/* transparent white */
+  backdrop-filter: blur(12px);
+  /* -webkit-backdrop-filter: blur(12px); */
+  
+
+  /* another way for the glass effect */
+  /* background: rgba(10, 10, 10, 0.7); /* Darker glass for dark mode */
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* main content  */
+.body-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.intro{
+    margin: 25vh 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bb{
+    border: 1px solid color-mix(in oklab, var(--foreground) 50%, transparent);
+    padding: 5px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    font-size: x-small;
+}
+.red-dot{
+    background-color: red;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    margin: 0 5px 0 0;
+}
+
+.intro-container{
+    margin: 20px 0 0 0;
+}
+
+
+.large{
+    font-size: 3rem;
+    text-align: center;
+}
+.medium{
+    font-size: medium;
+    text-align: center;
+}
+
+.tiny{
+    font-size: small;
+}
+.btn-container{
+    display: flex;
+    width: 35vw;
+    justify-content: center;
+}
+/* buttons */
+.theme-btn{
+    padding: 12px 40px;
+    min-width: 10vw;
+    font-size: medium;
+    border-radius: 12px;
+    border: none;
+    background-color: #a3004c;
+    color: var(--foreground);
+    font-weight: bold;
+    margin: 10px;
+}
+
+.glass-btn{
+    padding: 11px 39px;
+    font-size: medium;
+    min-width: 10vw;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--foreground);
+    font-weight: bold;
+    margin: 10px;
+    
+}
+
+/* dashboard image */
+.demo-container{
+    margin:100px 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center ;
+}
+.shadow-box{
+    box-shadow: 0 0 200px 40px rgba(255, 33, 115, 0.8);
+    width: 30vw;
+
+}
+.img-container{
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(36, 30, 39, 0.4);
+    border-radius: 10px;
+}
+.dashboard-img{
+    /* justify-self: center; */
+    width: 89vw;
+    margin: 0.5vw;
+    /* border: 8px solid gray; */
+    border-radius: 10px;
+
+}
+
+.feature{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feature-banner{
+    font-size: 12px;
+    color: oklch(85.6% .0618 346.368);
+    background-color: #a3004c;
+    padding: 3px 8px;
+    border-radius: 6px;
+    margin: 20px;
+}
+.feature-title{
+    font-size: 45px;
+    font-weight: 600;
+}
+.feature-desc{
+    font-size: medium;
+}
+.feature-card-container{
+    display: flex;
+    justify-content: center;
+    width: 80vw;
+}
+.feature-card{
+    /* height: 500px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    /* border: 1px solid white; */
+
+
+    overflow: hidden;
+    padding: 1rem;
+    border-radius: 0.75rem; /* rounded-xl */
+    border: 1px solid var(--muted-alpha);
+    background-color: color-mix(in oklab, var(--muted) 20%, transparent);
+    backdrop-filter: blur(18px);
+    transition: all 0.3s ease;
+    max-width: 350px; /* Optional: adjust as needed */
+    cursor: pointer;
+
+    margin: 50px 20px;
+
+}
+
+
+.masked-container {
+  /* relative */
+  /* position: relative; */
+
+  /* mx-auto */
+  margin: 25px auto ;
+
+  /* size-36 (9rem or 144px) */
+  width: 9rem;
+  height: 9rem;
+
+  /* [mask-image:radial-gradient(...)] */
+  /* We include the -webkit- prefix for Safari/Chrome support */
+  -webkit-mask-image: radial-gradient(
+    ellipse 50% 50% at 50% 50%, 
+    #000 40%, 
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 50% 50% at 50% 50%, 
+    #000 40%, 
+    transparent 100%
+  );
+}
+.card-logo-container{
+
+  width: 144px;
+  height: 144px;
+
+  --primary: #a3004c4d;
+
+  /* bg-[linear-gradient(...)] */
+  background-image: 
+    linear-gradient(to right, var(--primary) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--primary) 1px, transparent 1px);
+
+  /* bg-[size:24px_24px] */
+  background-size: 24px 24px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.card-logo{
+    background-color: #a3004c;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 0 40px 20px rgba(255, 33, 115, 0.1);
+}
+.card-logo svg{
+    opacity: 0.8;
+    width: 25px;
+    height: 25px;
+}
+
+.feature-card-main{
+    margin: 1rem 0;
+    font-size: 1.15rem; /* text-xl */
+    font-weight: 600;
+    z-index: 2;
+}
+
+.feature-card-desc{
+    text-align: center;
+    font-size: 0.75rem; /* text-sm */
+    color: color-mix(in oklab, var(--muted-foreground) 60%, transparent);
+    line-height: 1.5;
+    z-index: 2;
+}
+
+.card-bubble{
+    width: 150px; 
+    
+    opacity: 0; /* Hidden by default
+    /*z-index: 0; Sits behind everything else
+    
+    /* transform: translateY(200px); */
+    /* SMOOTH ANIMATION */
+    transition: 
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+    opacity 0.6s ease;
+    
+    /* Avoid mouse interaction so it doesn't mess with hover */
+    /* pointer-events: none; */
+}
+
+.feature-card:hover .card-bubble{
+    /* border: radial-gradient(circle, rgba(163, 0, 76, 0.6) 0%, transparent 90%); */
+    box-shadow: 0 0 100px 80px rgba(255, 33, 115, 0.4);
+    /* transform: translateY(-20px); */
+    opacity: 1;
+}
+
+.feature-card2{
+    margin: 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    width: 100%;
+    border-radius: 1.25rem;
+}
+
+.pricing{
+    margin: 1rem 0;
+}
+.plans-desc{
+    margin: 1rem 0;
+}
+.card2-container{
+    margin: 2rem 3rem;
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+}
+.seperator{
+    width: 100%;
+    border: 1px solid var(--background);
+    margin: 40px 0;
+}
+.plan-feats-items{
+    display: flex;
+    align-items: center;
+    margin: 0 0 15px 0;
+}
+.plan-btn{
+    width: 100%;
+    align-self: flex-end;
+    /* font-size: 1rem; */
+    border-radius: 8px;
+    padding: 0.8rem;
+    /* margin: auto 0 0 0; */
+    
+}
+
+
+/* Reusabl color */
+.primary-btn{
+    background-color: var(--background);
+    border: none;
+    color:var(--foreground);
+}
+.secondary-btn{
+    background-color: var(--primary);
+    border: none;
+    color:var(--foreground);
+}
+.bg-secondary{
+    background-color: var(--card)
+}
+.bg-primary{
+    background-color: var(--primary);
+}
+.card-foreground{
+    color: var(--card-foreground);
+}
+.accent{
+    color: var(--accent-foreground);
+}
+.big{
+    font-size: 2rem;
+}
+.huge{
+    font-size: 3rem;
+}
+.small{
+    font-size: 0.75rem;
+}
+.muted-accent{
+    color: var(--muted-foreground);
+}
+
+.bold{
+    font-weight: bold;
+}
+
+/* testimonial section  */
+.testimonials-container{
+    width: 80%;
+    /* max-width: 800px; */
+    margin: 100px auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.testimonials-wrapper{
+    /* display: flex; */
+    /* transition: transform 0.5s cubic-bezier(0.4,0.2, 1); */
+    position: relative;
+    height: 360px;
+
+}
+
+.testimonial-slide{
+    position: absolute;   /* all slides stack on top of each other */
+    inset: 0;
+    opacity: 0;
+    transform: translateX(60px);   /* starts shifted right (off-screen feel) */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    pointer-events: none;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+}
+
+
+
+.testimonial-slide.active {
+    opacity: 1;
+    transform: translateX(0);   /* slides into place */
+    pointer-events: auto;
+}
+
+.testimonial-slide.exit {
+    opacity: 0;
+    transform: translateX(-60px);   /* exits to the left */
+}
+
+/* Styling the elements based on your image */
+.stars { color: var(--primary); font-size: 24px; margin-bottom: 20px; }
+
+.quote { font-size: 1.25rem; line-height: 1.6; max-width: 600px; margin-bottom: 30px; }
+
+.stat-badge {
+    border: 0.5px solid var(--muted-alpha);
+    background-color: color-mix(in oklab, var(--muted) 40%, transparent);
+    backdrop-filter: blur(18px);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 40px;
+    color: var(--color-purple-300);
+}
+
+.user-info { display: flex; align-items: center; gap: 15px; text-align: left; }
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  background: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* Dots Styling */
+.dots-container { display: flex; justify-content: center; gap: 10px; margin-top: 20px; }
+.dot {
+  width: 12px; height: 12px; background: #3f3f46; border-radius: 50%; cursor: pointer; transition: 0.3s;
+}
+.dot.active { width: 30px; border-radius: 10px; background: var(--primary); }
+
+
+/* signup-container */
+.signup-container{
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    height: 80vh;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.signup-text{
+    font-size: 1.75rem;
+    /* font-weight: 400; */
+    font-weight: bold;
+    /* color: var(--accent-foreground); */
+    text-align: center;
+    margin: 20px auto;
+}
+.chat-btn{
+    margin: 20px auto;
+    padding: 12px 36px;
+    background-color: var(--primary);
+    border: none;
+    border-radius: 8px;
+    color: var(--accent-foreground);
+}
+
+.bg-effect{
+    width:100%;
+    box-shadow: 0 0 200px 40px rgba(255, 33, 115, 0.4);
+    z-index: 1;
+
+}
+
+/* feedback section */
+.feedback-section{
+    display: flex;
+    width: 80vw;
+    height: 60vh;
+    align-items: flex-start;
+    margin: 40px 0 0 0;
+}
+
+.feedback-banner{
+    display:flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.feedback-form{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 4px 20px;
+}
+.input-container{
+    border: 0.5px solid var(--muted-alpha);
+    background-color: color-mix(in oklab, var(--muted) 40%, transparent);
+    backdrop-filter: blur(18px);
+    color: var(--accent-foreground);
+    padding: 6px 0 6px 10px ;
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 8px;;
+}
+
+.feedback-submit{
+    background-color: var(--primary);
+    border: none;
+    border-radius: 8px;
+    color:var(--foreground);
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px 24px;
+}
+
+/* footer */
+
+.footer{
+    height: 30vh;
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 0.5px solid var(--muted-alpha);
+    background-color: color-mix(in oklab, var(--muted) 40%, transparent);
+    backdrop-filter: blur(18px);
+    color: var(--accent-foreground);
+    border-radius: 1.25rem;
+    margin: 0 0 40px 0;
+
+}
+
+.footer-logo{
+    margin: 10px 0;
+}
+
